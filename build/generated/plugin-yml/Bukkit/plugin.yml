@@ -1,0 +1,7 @@
+name: CyanPoints
+version: "1.3"
+main: cn.cyanbukkit.points.CyanPoints
+website: https://cyanbukkit.net
+depend:
+  - LuckPerms
+  - Vault

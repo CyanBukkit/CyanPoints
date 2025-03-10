@@ -1,0 +1,4 @@
+MySQL:
+  Url: jdbc:mysql://localhost:3306/your_db
+  Username: your_username
+  Password: your_password
