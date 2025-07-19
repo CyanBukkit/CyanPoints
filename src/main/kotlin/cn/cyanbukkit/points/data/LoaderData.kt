@@ -170,27 +170,6 @@ object LoaderData {
 
         dataSource.connection.use { conn -> conn.prepareStatement(cache).execute() }
 
-//        dataSource.connection.use { conn ->
-//            conn.prepareStatement(
-//                """
-//            ALTER DATABASE bp CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-//        """.trimIndent()
-//            ).execute()
-//        }
-
-
-        // 通过 show global variables like '%max_connect_errors%'; 查看最大连接错误数 如果小于500 就设置  set global max_connect_errors=100000;
-        dataSource.connection.use { conn ->
-            val stmt = conn.createStatement()
-            val rs = stmt.executeQuery("SHOW GLOBAL VARIABLES LIKE 'max_connect_errors'")
-            if (rs.next()) {
-                val maxConnectErrors = rs.getString("Value").toInt()
-                if (maxConnectErrors < 100000) {
-                    stmt.executeUpdate("SET GLOBAL max_connect_errors = 100000")
-                }
-            }
-        }
-
 
     }
 

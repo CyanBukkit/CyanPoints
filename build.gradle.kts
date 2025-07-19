@@ -4,6 +4,7 @@ plugins {
     id("net.minecrell.plugin-yml.bukkit") version "0.6.0"
     id("com.github.johnrengelman.shadow") version ("7.1.2")
 }
+//gradle clean --refresh-dependencies shadowJar
 
 version = 1.3
 
@@ -15,7 +16,7 @@ repositories {
 dependencies {
     compileOnly("org.spigotmc:spigot-api:1.8.8-R0.1-SNAPSHOT")
 
-    compileOnly("me.clip:placeholderapi:2.11.2")// https://mvnrepository.com/artifact/com.mysql/mysql-connector-j
+    compileOnly("me.clip:placeholderapi:2.11.6")// https://mvnrepository.com/artifact/com.mysql/mysql-connector-j
     implementation(kotlin("stdlib-jdk8"))
     implementation("com.mysql:mysql-connector-j:8.3.0")
     implementation("com.zaxxer:HikariCP:4.0.3")
